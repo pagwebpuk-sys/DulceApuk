@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DulceApuk | Repostería Exquisita</title>
+    <style>
+        /* ===== COLORES PRINCIPALES ===== */
+        :root {
+            --rojo-vino: #681620;       /* Rojo Vino Puro */
+            --rojo-oscuro: #4A0E16;     /* Rojo más oscuro para detalles */
+            --dorado: #D4AF37;          /* Dorado Oro */
+            --dorado-claro: #F4D03F;   /* Dorado brillante */
+            --crema: #FFF8F0;          /* Fondo crema suave */
+            --blanco: #FFFFFF;
+            --texto: #2C2C2C;
+        }
+
+        /* ===== ESTILO GENERAL ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Playfair Display', 'Georgia', serif;
+            background-color: var(--crema);
+            color: var(--texto);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        /* ===== HEADER / NAVEGACIÓN ===== */
+        header {
+            background: linear-gradient(135deg, var(--rojo-vino), var(--rojo-oscuro));
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            border-bottom: 3px solid var(--dorado);
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .logo {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: var(--dorado);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            letter-spacing: 2px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            color: var(--blanco);
+            font-size: 1.1em;
+            font-weight: 500;
+            transition: color 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        nav a:hover {
+            color: var(--dorado);
+        }
+
+        /* ===== BOTONES ===== */
+        .btn {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--dorado), var(--dorado-claro));
+            color: var(--rojo-vino);
+            padding: 12px 30px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-radius: 50px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 2px solid var(--dorado);
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(212, 175, 55, 0.4);
+        }
+
+        /* ===== HERO / PORTADA ===== */
+        .hero {
+            height: 85vh;
+            background: linear-gradient(rgba(104, 22, 32, 0.85), rgba(74, 14, 22, 0.85)), 
+                        url('https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=1920');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .hero h1 {
+            font-size: 4em;
+            color: var(--dorado);
+            margin-bottom: 20px;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.5);
+            animation: fadeInDown 1s ease;
+        }
+
+        .hero p {
+            font-size: 1.5em;
+            color: var(--blanco);
+            margin-bottom: 30px;
+            max-width: 600px;
+            animation: fadeInUp 1s ease 0.3s both;
+        }
+
+        .hero .btn {
+            animation: fadeInUp 1s ease 0.6s both;
+        }
+
+        /* ===== TÍTULOS DE SECCIÓN ===== */
+        .section-title {
+            text-align: center;
+            margin: 60px 0 40px;
+        }
+
+        .section-title h2 {
+            font-size: 2.8em;
+            color: var(--rojo-vino);
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title h2::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: var(--dorado);
+            margin: 15px auto 0;
+            border-radius: 2px;
+        }
+
+        .section-title p {
+            color: #666;
+            font-size: 1.2em;
+            margin-top: 10px;
+        }
+
+        /* ===== SECCIÓN PRODUCTOS ===== */
+        .products-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .product-card {
+            background: var(--blanco);
+            border-radius: 15px;
+            overflow: hidden;
+            box
